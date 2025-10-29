@@ -11,7 +11,7 @@ This repository builds a Docker image from the official MinIO release and pushes
 
 ## Usage (quick)
 Run a container for testing:
-docker run -p 9000:9000 youruser/minio:latest server /data
+docker run -p 9000:9000 docker.io/sixteenone/minio:latest server /data
 
 Refer to MinIO docs for runtime flags and configuration.
 
