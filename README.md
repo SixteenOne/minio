@@ -1,6 +1,6 @@
 # minio (containerized)
 
-[![Build and Push Image to Dockerhub](https://github.com/SixteenOne/minio/blob/main/.github/workflows/docker.yml/badge.svg)](https://github.com/SixteenOne/minio/blob/main/.github/workflows/docker.yml)
+[![Build and Push Image to Dockerhub](https://github.com/SixteenOne/minio/actions/workflows/docker.yml/badge.svg)](https://github.com/SixteenOne/minio/actions/workflows/docker.yml)
 
 This repository builds a Docker image from the official MinIO release and pushes the resulting image to Docker Hub.
 
