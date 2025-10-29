@@ -28,11 +28,10 @@ jobs:
       - name: Build Docker image
         run: |
           cd minio
-          docker build -t docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} -t docker.io/sixteenone/minio:latest .
+          TAG=docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} make docker
 
       - name: Push Docker images
         env:
           DOCKER_BUILDKIT: 1
         run: |
-          docker push myregistry.com/minio/minio:${{ steps.extract_tag.outputs.TAG_NAME }}
-          docker push myregistry.com/minio/minio:latest
+          docker push docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }}
