@@ -29,9 +29,12 @@ jobs:
         run: |
           cd minio
           TAG=docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} make docker
+          docker tag docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} docker.io/sixteenone/minio:latest
+
 
       - name: Push Docker images
         env:
           DOCKER_BUILDKIT: 1
         run: |
           docker push docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }}
+          docker push docker.io/sixteenone/minio:latest
