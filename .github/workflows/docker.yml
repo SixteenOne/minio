@@ -31,22 +31,6 @@ jobs:
           TAG=docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} make docker
           docker tag docker.io/sixteenone/minio:${{ steps.extract_tag.outputs.TAG_NAME }} docker.io/sixteenone/minio:latest
 
-      # - name: Set up QEMU
-      #   uses: docker/setup-qemu-action@v2
-
-      # - name: Set up Docker Buildx
-      #   uses: docker/setup-buildx-action@v3
-
-      # - name: Build multi-arch Docker image and push
-      #   env:
-      #     TAG_NAME: ${{ steps.extract_tag.outputs.TAG_NAME }}
-      #   run: |
-      #     docker buildx build \
-      #     --platform linux/amd64,linux/arm64,linux/arm/v7 \
-      #     -t docker.io/sixteenone/minio:${TAG_NAME} \
-      #     -t docker.io/sixteenone/minio:latest \
-      #     --push ./minio
-
       - name: Push Docker images
         env:
           DOCKER_BUILDKIT: 1
